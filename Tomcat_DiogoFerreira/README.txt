@@ -1,5 +1,7 @@
 Project Diogo Ferreira - XpandIT
 
+First of all it is needed to put the Dockerfile and the sample.war files in the same directory.
+
 How to Build the Docker Image through a Dockerfile
 
 1 - The first step is to open Terminal, CMD or Powershell.
