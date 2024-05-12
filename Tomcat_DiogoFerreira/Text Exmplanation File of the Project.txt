@@ -1,0 +1,25 @@
+Explanation file of the project
+
+This project sets up a Docker container based on CentOS 7, configured to run a Java web application using Apache Tomcat 8.5 with SSL support. Here's what each part of the Dockerfile does:
+
+1 - Base Image: It starts with the CentOS 7 base image.
+
+2 - Package Installation: Installs necessary packages like Java, wget, and OpenSSL.
+
+3 - SSL Configuration: Generates a self-signed SSL certificate using OpenSSL, placing the private key and certificate in appropriate directories.
+
+4 - Tomcat Installation: Downloads and installs Tomcat 8.5 from Apache's distribution archive.
+
+5 - JKS Keystore Creation: Creates a Java Keystore (JKS) using the SSL certificate and private key generated earlier.
+
+6 - Tomcat Configuration: Updates Tomcat's server.xml configuration file to enable SSL on port 4041, configuring it to use the previously generated JKS keystore.
+
+7 - Application Deployment: Copies a sample web application (WAR file) into Tomcat's webapps directory.
+
+8 - Port Exposure: Exposes port 4041, where Tomcat will be running with SSL enabled.
+
+9 - Startup Script: Creates a simple bash script (start_services.sh) to start Tomcat when the container starts. This script is placed in /usr/local/bin and made executable.
+
+10 - Container Startup: Sets the CMD instruction to execute the start_services.sh script when the container starts, initiating Tomcat.
+
+Overall, this Dockerfile sets up a CentOS-based container with an SSL-enabled Apache Tomcat server running a Java web application. It encapsulates all the necessary configurations and dependencies to run the application in a containerized environment.
