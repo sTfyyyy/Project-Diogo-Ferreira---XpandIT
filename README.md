@@ -28,5 +28,7 @@ The name projetodiogoferreira is the name of the image that will be used to crea
 
 Order of the commands are:
 docker build -t projetodiogoferreira .
+
 docker run -d -p 4041:4041 -t projetodiogoferreira
+
 https://localhost:4041/sample/
